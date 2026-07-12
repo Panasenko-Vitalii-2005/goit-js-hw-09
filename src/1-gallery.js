@@ -1,3 +1,10 @@
+// Імпорт стилів проєкту (Vite сам знайде їх у папці css)
+import "./css/styles.css";
+
+// Імпорт бібліотеки SimpleLightbox та її стилів
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
 const images = [
   {
     preview:
@@ -75,15 +82,8 @@ const markup = images
   .join("");
 
 gallery.insertAdjacentHTML("beforeend", markup);
-gallery.addEventListener("click", handleGalleryClick);
-function handleGalleryClick(event) {
-  event.preventDefault();
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-  const largeImageUrl = event.target.dataset.source;
-  const instance = basicLightbox.create(
-    `<img src="${largeImageUrl}" width="800" height="600">`,
-  );
-  instance.show();
-}
+new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+  captionPosition: "bottom",
+});
