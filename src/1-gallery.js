@@ -71,7 +71,6 @@ const images = [
   },
 ];
 
-console.log("Hello Gallery");
 const gallery = document.querySelector(".gallery");
 
 const markup = images

@@ -24,12 +24,12 @@ form.addEventListener("input", (event) => {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   if (!formData.email || !formData.message) {
-    alert("Please fill in all fields before submitting the form.");
+    alert("Fill please all fields");
     return;
   }
-  console.log("Form Data:", formData);
+  console.log(formData);
   form.reset();
-  localStorage.removeItem(localStorageKey); // Удаляет данные из LocalStorage после отправки формы
+  localStorage.removeItem(localStorageKey);
   formData.email = "";
   formData.message = "";
 });
