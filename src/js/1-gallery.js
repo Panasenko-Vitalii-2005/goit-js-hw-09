@@ -1,5 +1,5 @@
 // Імпорт стилів проєкту (Vite сам знайде їх у папці css)
-import "./css/styles.css";
+import "../css/styles.css";
 
 // Імпорт бібліотеки SimpleLightbox та її стилів
 import SimpleLightbox from "simplelightbox";
